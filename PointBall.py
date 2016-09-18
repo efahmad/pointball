@@ -11,7 +11,6 @@ from kivy.uix.relativelayout import RelativeLayout
 
 
 class PlayGroundWidget(Widget):
-
     def __init__(self, **kwargs):
         self.lock_touch = False
         self.my_score = 0
@@ -151,10 +150,10 @@ class PlayGroundWidget(Widget):
             # rect = Rectangle(pos=(self.window_left_right_padding, Window.height - self.window_top_bottom_padding),
             #                  size=(300, self.window_top_bottom_padding))
             grid_layout = GridLayout(cols=3)
-            grid_layout.pos = pos=(self.window_left_right_padding, Window.height - self.window_top_bottom_padding)
+            grid_layout.pos = pos = (self.window_left_right_padding, Window.height - self.window_top_bottom_padding)
             grid_layout.size = (400, self.window_top_bottom_padding)
-            #label_player_1 = Label(text="You", pos=rect.pos, size=(rect.size[0], rect.size[1] / 2))
-            #label_player_2 = Label(text="Other Player", pos=(rect.pos[0], rect.pos[1] + rect.size[1] / 2),
+            # label_player_1 = Label(text="You", pos=rect.pos, size=(rect.size[0], rect.size[1] / 2))
+            # label_player_2 = Label(text="Other Player", pos=(rect.pos[0], rect.pos[1] + rect.size[1] / 2),
             #             size=(rect.size[0], rect.size[1] / 2))
 
             label_player_1 = Label(text="You")
@@ -173,7 +172,7 @@ class PlayGroundWidget(Widget):
 
             ellipse_pos = label_player_1.pos if self.turn else label_player_2.pos
             with place_holder_1.canvas if self.turn else place_holder_2.canvas:
-                Ellipse(pos=(grid_layout.size[0]/4 - 7.5, grid_layout.size[1]/4 - 7.5), size=(15, 15))
+                Ellipse(pos=(grid_layout.size[0] / 4 - 7.5, grid_layout.size[1] / 4 - 7.5), size=(15, 15))
 
             self.add_widget(grid_layout)
 
