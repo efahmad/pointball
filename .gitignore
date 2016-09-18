@@ -1,3 +1,4 @@
+bin/
 .buildozer/
 .idea/
 *.pyc
